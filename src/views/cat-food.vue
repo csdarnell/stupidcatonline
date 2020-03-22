@@ -4,7 +4,7 @@
             <div class="column is-8">
                 <div class="section content-title-group">
                     <h2 class="title">Cat Food</h2>
-                    <button class="button refresh-button" @click="LoadCatFood()">>
+                    <button class="button refresh-button" @click="LoadCatFood()">
                         <i class="fas fa-sync"></i>
                     </button>
                     <ul>

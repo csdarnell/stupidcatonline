@@ -35,5 +35,5 @@ const parseList = response => {
   
   
   export const dataService = {
-      getCatFood,
+      getCatFood
   };
