@@ -11,11 +11,12 @@
 </template>
 
 <script>
+import HeaderBar from '@/components/header-bar';
 import NavBar from '@/components/nav-bar';
 
 export default {
   name: 'App',
-  components: { NavBar },
+  components: { HeaderBar, NavBar },
 };
 </script>
 

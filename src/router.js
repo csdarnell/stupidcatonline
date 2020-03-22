@@ -19,22 +19,22 @@ export default new Router({
             import('./views/home.vue'),
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () =>
-            import('./views/about.vue'),
-        },
-        {
             path: '/cat-food',
             name: 'cat-food',
             component: () =>
             import('./views/cat-food.vue'),
         },
         {
-          path: '/cat-towers',
-          name: 'cat-towers',
-          component: () =>
-          import('./views/cat-towers.vue'),
+            path: '/cat-towers',
+            name: 'cat-towers',
+            component: () =>
+            import('./views/cat-towers.vue'),
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: () =>
+            import('./views/about.vue'),
         },
         {
             path: '*',
