@@ -25,6 +25,12 @@ export default new Router({
             import('./views/cat-food.vue'),
         },
         {
+            path: '/cat-food/:id',
+            name: 'cat-food-detail',
+            component: () =>
+            import('./views/cat-food-detail.vue')
+        },
+        {
             path: '/cat-towers',
             name: 'cat-towers',
             component: () =>
