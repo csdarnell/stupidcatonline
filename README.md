@@ -1,5 +1,7 @@
 # stupidcatonline
 
+This code was modified from open-source code produced by John Papa for the Pluralsight course titled "Vue: Getting Started" https://app.pluralsight.com/profile/author/john-papa
+
 ## Project setup
 ```
 npm install
