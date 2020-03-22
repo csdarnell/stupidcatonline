@@ -9,7 +9,7 @@
                 </ul>
             </nav>
         </div>
-        <div>
+        <div class="content-container">
             <router-link to="/about">About</router-link>
         </div>
     </div>
