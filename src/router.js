@@ -25,6 +25,18 @@ export default new Router({
             import('./views/about.vue'),
         },
         {
+            path: '/cat-food',
+            name: 'cat-food',
+            component: () =>
+            import('./views/cat-food.vue'),
+        },
+        {
+          path: '/cat-towers',
+          name: 'cat-towers',
+          component: () =>
+          import('./views/cat-towers.vue'),
+        },
+        {
             path: '*',
             component: PageNotFound,
         }

@@ -1,14 +1,15 @@
 <template>
     <div class="content-container">
-        <div>
-            <h2>About StupidCat!</h2>
+        <div class="section content-title-group">
+            <h2 class="title">About StupidCat!</h2>
             <p>
                 StupidCat! is small pet product company located in Spotsylvania, VA.  The company produces unique pet products which have become the talk of the town.
             </p>
+            <br />
             <p>
-                Address:  
-                1234 No Birds Here By The Way
-                Spotsylvania, VA 22553
+                Address:<br />
+                1234 No Birds Here By The Way<br />
+                Spotsylvania, VA 22553<br />
             </p>
         </div>
     </div>
