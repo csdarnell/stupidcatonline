@@ -7,7 +7,7 @@ import { API } from './config';
 
 const getCatFood = async function() {
     try {
-        const response = await axios.get(`${API}/catFood`);
+        const response = await axios.get(`${API}/catfood`);
 
         let data = parseList(response);
 

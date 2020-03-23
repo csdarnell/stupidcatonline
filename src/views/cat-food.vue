@@ -5,19 +5,19 @@
                 <div class="section content-title-group">
                     <h2 class="title">Cat Food</h2>
                     <button class="button refresh-button" @click="LoadCatFood()">
-                        <i class="fas fa-sync"></i>
+                        <i class="fas fa-sync"></i>Refresh
                     </button>
                     <ul>
                         <li v-for="food in catFood" :key="food.id">
                             <div class="card">
-                                <div class="card-content">
+                                <!-- <div class="card-content">
                                     <div class="content">
                                         <div :key="food.name" class="name">
                                             {{ food.manufacturer}} {{ food.productName}}
                                         </div>
                                     </div>
-                                </div>
-                                <footer>
+                                </div> -->
+                                <!-- <footer>
                                     <router-link
                                         tag="button"
                                         class="link card-footer-item"
@@ -26,7 +26,7 @@
                                         <i class="fas fa-check"></i>
                                         <span>Select</span>
                                     </router-link>
-                                </footer>
+                                </footer> -->
                             </div>
                         </li>
                     </ul>
@@ -52,6 +52,7 @@ export default {
     name: 'CatFood',
     data() {
         return {
+            catFoodToDelete: null,
             message: '',
             showModal: false
         };
@@ -74,7 +75,14 @@ export default {
         }
     },
     computed: {
-        ...mapState(['catFood'])
-    }
-}
+        ...mapState(['catFood']),
+        modalMessage() {
+            const name =
+                this.catFoodToDelete && this.catFoodToDelete.fullName
+                ? this.catFoodToDelete.fullName
+                : '';
+            return `Would you like to delete ${name} ?`;
+        },
+    },
+};
 </script>

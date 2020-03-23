@@ -1,5 +1,8 @@
 {
     "/api/*": "/$1",
-    "/catfood": "/catfood",
+    "/catFood": "/catFood",
+    "/catToys": "/catToys",
+    "/catTowers": "/catTowers",
+    "/catLitter": "/catLitter",
     "/reset": "/reset"
 }
