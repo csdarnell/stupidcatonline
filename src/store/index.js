@@ -14,7 +14,7 @@ const state = () => ({
 
 const mutations = {
     [GET_CATFOOD](state, catfood) {
-        console.log('index.js:GET_GATFOOD()');
+        console.log('index.js:GET_CATFOOD()');
         state.catfood = catfood;
     }
 };
