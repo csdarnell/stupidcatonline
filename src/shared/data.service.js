@@ -5,19 +5,19 @@ import * as axios from 'axios';
 
 import { API } from './config';
 
-const getCatFood = async function() {
+const getCatFoods = async function() {
     try {
-        console.log('data.service.getCatFood():  Attempting to get Cat Food!!!!');
+        console.log('data.service.getCatFoods():  Attempting to get Cat Food!!!!');
         console.log(API);
-        const response = await axios.get(`${API}/catFood`);
+        const response = await axios.get(`${API}/catFoods`);
 
         let data = parseList(response);
 
-        const catFood = data.map(h => {
+        const catFoods = data.map(h => {
             return h;
         });
 
-        return catFood;
+        return catFoods;
 
     } catch (error) {
         console.error(error);
@@ -37,5 +37,5 @@ const parseList = response => {
   
   
   export const dataService = {
-      getCatFood
+      getCatFoods
   };

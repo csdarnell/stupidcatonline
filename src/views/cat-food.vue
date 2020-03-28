@@ -4,11 +4,11 @@
             <div class="column is-8">
                 <div class="section content-title-group">
                     <h2 class="title">Cat Food</h2>
-                    <button class="button refresh-button" @click="LoadCatFood()">
+                    <button class="button refresh-button" @click="LoadCatFoods()">
                         <i class="fas fa-sync"></i>Refresh
                     </button>
                     <ul>
-                        <li v-for="food in catFood" :key="food.id">
+                        <li v-for="food in catFoods" :key="food.id">
                             <div class="card">
                                 <!-- <div class="card-content">
                                     <div class="content">
@@ -49,7 +49,7 @@ import { mapActions, mapState } from 'vuex';
 import Modal from '@/components/modal';
 
 export default {
-    name: 'CatFood',
+    name: 'CatFoods',
     data() {
         return {
             catFoodToDelete: null,
@@ -62,10 +62,10 @@ export default {
     },
     async created() {
         console.log('created():  starting');
-        await this.loadCatFood();
+        await this.loadCatFoods();
     },
     methods: {
-        ...mapActions(['getCatFoodAction', 'deleteCatFoodAction']),
+        ...mapActions(['getCatFoodsAction', 'deleteCatFoodAction']),
         askToDelete(catFood) {
             this.catFoodToDelete = catFood;
             this.showModal = true;
@@ -79,17 +79,17 @@ export default {
             if (this.catFoodToDelete) {
                 await this.deleteCatFood(this.catFoodToDelete);
             }
-            await this.loadCatFood();
+            await this.loadCatFoods();
         },
-        async loadCatFood() {
-            console.log('loadCatFood():  starting');
-            this.message = 'getting the cat food, please be patient';
-            this.catFood = await this.getCatFoodAction();
+        async loadCatFoods() {
+            console.log('loadCatFoods():  starting');
+            this.message = 'getting the cat foods, please be patient';
+            await this.getCatFoodsAction();
             this.message = '';
         }
     },
     computed: {
-        ...mapState(['catFood']),
+        ...mapState(['catFoods']),
         modalMessage() {
             console.log('modalMessage():  starting');
             const name = 'No Name Provided';

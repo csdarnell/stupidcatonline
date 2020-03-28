@@ -1,1 +1,1 @@
-export const GET_CATFOOD = 'getCatFood';
+export const GET_CATFOODS = 'getCatFoods';
