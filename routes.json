@@ -1,8 +1,8 @@
 {
     "/api/*": "/$1",
-    "/catFood": "/catFood",
-    "/catToys": "/catToys",
-    "/catTowers": "/catTowers",
-    "/catLitter": "/catLitter",
+    "/catFoodProducts": "/catFoodsView",
+    "/catToyProducts": "/catToysView",
+    "/catTowerProducts": "/catTowersView",
+    "/catLitterProducts": "/catLitterView",
     "/reset": "/reset"
 }

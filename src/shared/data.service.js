@@ -9,7 +9,7 @@ const getCatFoods = async function() {
     try {
         console.log('data.service.getCatFoods():  Attempting to get Cat Food!!!!');
         console.log(API);
-        const response = await axios.get(`${API}/catFoods`);
+        const response = await axios.get(`${API}/catFood`);
 
         let data = parseList(response);
 

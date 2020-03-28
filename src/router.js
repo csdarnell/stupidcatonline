@@ -16,31 +16,31 @@ export default new Router({
             path: '/home',
             name: 'home',
             component: () =>
-            import('./views/home.vue'),
+            import(/* webpackChunkName: "bundle-home" */ './views/home.vue'),
         },
         {
-            path: '/cat-food',
-            name: 'cat-food',
+            path: '/cat-foods',
+            name: 'cat-foods',
             component: () =>
-            import('./views/cat-food.vue'),
+            import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-foods.vue'),
         },
         {
             path: '/cat-food/:id',
             name: 'cat-food-detail',
             component: () =>
-            import('./views/cat-food-detail.vue')
+            import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-food-detail.vue')
         },
         {
             path: '/cat-towers',
             name: 'cat-towers',
             component: () =>
-            import('./views/cat-towers.vue'),
+            import(/* webpackChunkName: "bundle-catTowers" */ './views/cat-towers.vue'),
         },
         {
             path: '/about',
             name: 'about',
             component: () =>
-            import('./views/about.vue'),
+            import(/* webpackChunkName: "bundle-about" */ './views/about.vue'),
         },
         {
             path: '*',

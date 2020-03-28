@@ -15,7 +15,7 @@ import HeaderBar from '@/components/header-bar';
 import NavBar from '@/components/nav-bar';
 
 export default {
-  name: 'App',
+  name: 'AppView',
   components: { HeaderBar, NavBar },
 };
 </script>

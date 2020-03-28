@@ -10,14 +10,14 @@
                     <ul>
                         <li v-for="food in catFoods" :key="food.id">
                             <div class="card">
-                                <!-- <div class="card-content">
+                                <div class="card-content">
                                     <div class="content">
                                         <div :key="food.name" class="name">
                                             {{ food.manufacturer}} {{ food.productName}}
                                         </div>
                                     </div>
-                                </div> -->
-                                <!-- <footer>
+                                </div>
+                                <footer>
                                     <router-link
                                         tag="button"
                                         class="link card-footer-item"
@@ -26,7 +26,7 @@
                                         <i class="fas fa-check"></i>
                                         <span>Select</span>
                                     </router-link>
-                                </footer> -->
+                                </footer>
                             </div>
                         </li>
                     </ul>
@@ -49,7 +49,7 @@ import { mapActions, mapState } from 'vuex';
 import Modal from '@/components/modal';
 
 export default {
-    name: 'CatFoods',
+    name: 'CatFoodsView',
     data() {
         return {
             catFoodToDelete: null,
