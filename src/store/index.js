@@ -14,12 +14,14 @@ const state = () => ({
 
 const mutations = {
     [GET_CATFOOD](state, catfood) {
+        console.log('index.js:GET_GATFOOD()');
         state.catfood = catfood;
     }
 };
 
 const actions = {
     async getCatFoodAction({ commit }) {
+        console.log('index:getCatFoodAction()');
         const catfood = await dataService.getCatFood();
         commit(GET_CATFOOD, catfood);
     }

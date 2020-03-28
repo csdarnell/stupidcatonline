@@ -38,7 +38,7 @@
             :message="modalMessage"
             :isOpen="showModal"
             @handleNo="closeModal"
-            @handleYes="closeModal"
+            @handleYes="deleteCatFood"
         >
         </Modal>
     </div>
@@ -61,26 +61,38 @@ export default {
         Modal
     },
     async created() {
+        console.log('created():  starting');
         await this.loadCatFood();
     },
     methods: {
-        ...mapActions(['getCatFoodAction']),
+        ...mapActions(['getCatFoodAction', 'deleteCatFoodAction']),
+        askToDelete(catFood) {
+            this.catFoodToDelete = catFood;
+            this.showModal = true;
+        },
         closeModal() {
+            console.log('closeModal():  starting');
             this.showModal = false;
         },
+        async deleteCatFood() {
+            this.closeModal();
+            if (this.catFoodToDelete) {
+                await this.deleteCatFood(this.catFoodToDelete);
+            }
+            await this.loadCatFood();
+        },
         async loadCatFood() {
+            console.log('loadCatFood():  starting');
             this.message = 'getting the cat food, please be patient';
-            await this.getCatFoodAction();
+            this.catFood = await this.getCatFoodAction();
             this.message = '';
         }
     },
     computed: {
         ...mapState(['catFood']),
         modalMessage() {
-            const name =
-                this.catFoodToDelete && this.catFoodToDelete.fullName
-                ? this.catFoodToDelete.fullName
-                : '';
+            console.log('modalMessage():  starting');
+            const name = 'No Name Provided';
             return `Would you like to delete ${name} ?`;
         },
     },
