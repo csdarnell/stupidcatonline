@@ -3,6 +3,6 @@
     "/catFoodProducts": "/catFoodsView",
     "/catToyProducts": "/catToysView",
     "/catTowerProducts": "/catTowersView",
-    "/catLitterProducts": "/catLitterView",
+    "/catLitterProducts": "/catLittersView",
     "/reset": "/reset"
 }

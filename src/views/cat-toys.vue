@@ -3,17 +3,17 @@
         <div class="columns">
             <div class="column is-8">
                 <div class="section content-title-group">
-                    <h2 class="title">Cat Towers</h2>
-                    <button class="button refresh-button" @click="LoadCatTowers()">
+                    <h2 class="title">Cat Toys</h2>
+                    <button class="button refresh-button" @click="LoadCatToys()">
                         <i class="fas fa-sync"></i>Refresh
                     </button>
                     <ul>
-                        <li v-for="tower in catTowers" :key="tower.id">
+                        <li v-for="toy in catToys" :key="toy.id">
                             <div class="card">
                                 <div class="card-content">
                                     <div class="content">
-                                        <div :key="tower.name" class="name">
-                                            {{ tower.manufacturer}} {{ tower.productName}}
+                                        <div :key="toy.name" class="name">
+                                            {{ toy.manufacturer}} {{ toy.productName}}
                                         </div>
                                     </div>
                                 </div>
@@ -21,7 +21,7 @@
                                     <router-link
                                         tag="button"
                                         class="link card-footer-item"
-                                        :to="{ name: 'cat-tower-detail', params: {id: tower.id } }"
+                                        :to="{ name: 'cat-toy-detail', params: {id: toy.id } }"
                                     >
                                         <i class="fas fa-check"></i>
                                         <span>Select</span>
@@ -38,7 +38,7 @@
             :message="modalMessage"
             :isOpen="showModal"
             @handleNo="closeModal"
-            @handleYes="deleteCatTower"
+            @handleYes="deleteCatToy"
         >
         </Modal>
     </div>
@@ -49,10 +49,10 @@ import { mapActions, mapState } from 'vuex';
 import Modal from '@/components/modal';
 
 export default {
-    name: 'CatTowersView',
+    name: 'CatToysView',
     data() {
         return {
-            catTowerToDelete: null,
+            catToyToDelete: null,
             message: '',
             showModal: false
         };
@@ -62,34 +62,34 @@ export default {
     },
     async created() {
         console.log('created():  starting');
-        await this.loadCatTowers();
+        await this.loadCatToys();
     },
     methods: {
-        ...mapActions(['getCatTowersAction', 'deleteCatTowerAction']),
-        askToDelete(catTower) {
-            this.catTowerToDelete = catTower;
+        ...mapActions(['getCatToysAction', 'deleteCatToyAction']),
+        askToDelete(catToy) {
+            this.catToyToDelete = catToy;
             this.showModal = true;
         },
         closeModal() {
             console.log('closeModal():  starting');
             this.showModal = false;
         },
-        async deleteCatTower() {
+        async deleteCatToy() {
             this.closeModal();
-            if (this.catTowerToDelete) {
-                await this.deleteCatTower(this.catTowerToDelete);
+            if (this.catToyToDelete) {
+                await this.deleteCatToy(this.catToyToDelete);
             }
-            await this.loadCatTowers();
+            await this.loadCatToys();
         },
-        async loadCatTowers() {
-            console.log('loadCatTowers():  starting');
-            this.message = 'getting the cat Towers, please be patient';
-            await this.getCatTowersAction();
+        async loadCatToys() {
+            console.log('loadCatToys():  starting');
+            this.message = 'getting the cat Toys, please be patient';
+            await this.getCatToysAction();
             this.message = '';
         }
     },
     computed: {
-        ...mapState(['catTowers']),
+        ...mapState(['catToys']),
         modalMessage() {
             console.log('modalMessage():  starting');
             const name = 'No Name Provided';

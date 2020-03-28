@@ -4,9 +4,9 @@
             <router-link to="/home">Home</router-link>
             <router-link to="/search">Search [TODO]</router-link>
             <router-link to="/cat-foods">Cat Food</router-link>
-            <router-link to="/cat-toys">Cat Toys [TODO]</router-link>
+            <router-link to="/cat-toys">Cat Toys</router-link>
             <router-link to="/cat-towers">Cat Towers</router-link>
-            <router-link to="/cat-litter">Cat Litter [TODO]</router-link>
+            <router-link to="/cat-litters">Cat Litter</router-link>
             ------------
             <router-link to="/chat">Chat [TODO]</router-link>
             ------------

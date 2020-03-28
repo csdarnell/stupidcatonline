@@ -37,6 +37,18 @@ export default new Router({
             import(/* webpackChunkName: "bundle-catTowers" */ './views/cat-towers.vue'),
         },
         {
+            path: '/cat-toys',
+            name: 'cat-toys',
+            component: () =>
+            import(/* webpackChunkName: "bundle-catToys" */ './views/cat-toys.vue'),
+        },
+        {
+            path: '/cat-litters',
+            name: 'cat-litters',
+            component: () =>
+            import(/* webpackChunkName: "bundle-catlitters" */ './views/cat-litters.vue'),
+        },
+        {
             path: '/about',
             name: 'about',
             component: () =>
