@@ -10,7 +10,6 @@
             <router-link to="/shopping-cart">Shopping Cart</router-link>
             <br/>
             <router-link to="/about">About</router-link>
-            <router-link to="/DNE">TEST:  Bad Route Example</router-link>
         </ul>
     </nav>
 </template>

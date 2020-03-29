@@ -4,9 +4,13 @@
             <div class="column is-8">
                 <div class="section content-title-group">
                     <h2 class="title">Shopping Cart</h2>
-                    <button class="button refresh-button" @click="loadShoppingCartItems()">
-                        <i class="fas fa-sync"></i>Refresh
-                    </button>
+                    <div class="card">
+                        <div class="card-content">
+                            Shopping Cart items: {{ this.shoppingCartTotalItems }}
+                            <br/>
+                            Shopping Cart Cost: {{ this.shoppingCartTotalCost }}
+                        </div>
+                    </div>
                     <ul>
                         <li v-for="cartItem in shoppingCartItems" :key="cartItem.id">
                             <div class="card">
@@ -14,10 +18,13 @@
                                     <div class="content">
                                         <div :key="cartItem.id" class="name">
                                           <img class="card-image" v-bind:src="cartItem.item.image" v-bind:alt="cartItem.item.productName">
-                                            {{ cartItem.item.manufacturer}} {{ cartItem.item.productName}}
                                             <br/>
+                                            Manufacturer: {{ cartItem.item.manufacturer }}
+                                            Product: {{ cartItem.item.productName }}
                                             Quantity: {{ cartItem.quantity }}
+                                            <br/>
                                             Price(each): ${{ cartItem.item.pricePerUnit }}
+                                            <br/>
                                             Total Cost: ${{ cartItem.item.pricePerUnit * cartItem.quantity }}
                                         </div>
                                     </div>
@@ -73,6 +80,8 @@ export default {
             shoppingCartItemToDelete: null,
             message: '',
             showModal: false,
+            shoppingCartTotalItems: 0,
+            shoppingCartTotalCost: 0,
         };
     },
     components: {
@@ -118,10 +127,12 @@ export default {
             this.message = 'getting the shopping cart items, please be patient';
             await this.getShoppingCartItemsAction();
             this.message = '';
+            this.shoppingCartTotalItems = this.shoppingCartItems.reduce((a,b) => (a.quantity + b.quantity), 0);
+            this.shoppingCartTotalCost = this.shoppingCartItems.reduce((a,b) => (a.quantity * a.item.pricePerUnit) + (b.quantity * b.item.pricePerUnit), 0);
         }
     },
     computed: {
-        ...mapState(['shoppingCartItems']),
+        ...mapState(['shoppingCartItems', 'shoppingCartTotalItems','shoppingCartTotalCost']),
         modalMessage() {
             const name =
                 this.shoppingCartItemToDelete && this.shoppingCartItemToDelete.item
