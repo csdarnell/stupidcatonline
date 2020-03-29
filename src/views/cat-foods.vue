@@ -22,7 +22,7 @@
                                     <router-link
                                         tag="button"
                                         class="link card-footer-item"
-                                        :to="{ name: 'cat-foods', params: {id: food.id } }"
+                                        :to="{ name: 'cat-food-detail', params: {id: food.id } }"
                                     >
                                         <i class="fas fa-check"></i>
                                         <span>View Details</span>
