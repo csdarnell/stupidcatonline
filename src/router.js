@@ -52,6 +52,12 @@ export default new Router({
             import(/* webpackChunkName: "bundle-catlitters" */ './views/cat-litters.vue'),
         },
         {
+            path: '/shopping-cart',
+            name: 'shopping-cart',
+            component: () =>
+            import(/* webpackChunkName: "bundle-shoppingCart" */ './views/shopping-cart.vue'),
+        },
+        {
             path: '/about',
             name: 'about',
             component: () =>

@@ -97,7 +97,7 @@
   ],
   "shoppingCart": [
     {
-      "id": "8f57c516-d801-4130-fa36-54c3d48e05b2",
+      "id": "e3d45742-f8fa-4089-275f-e3009efa2879",
       "item": {
         "id": 10,
         "manufacturer": "Purina",
@@ -106,10 +106,10 @@
         "productType": "Food",
         "image": "/assets/7179299204_a335d494d3_z.jpg"
       },
-      "quantity": 3
+      "quantity": 1
     },
     {
-      "id": "590d1951-5529-4222-eba5-87b371e13712",
+      "id": "2e7a3d34-dfd8-4182-7629-a74bbd2d2cc2",
       "item": {
         "id": 20,
         "manufacturer": "IAMS",
@@ -118,19 +118,7 @@
         "productType": "Food",
         "image": "/assets/9521337301_bfdba2610c.jpg"
       },
-      "quantity": 1
-    },
-    {
-      "id": "e5ff6984-63b7-4939-c176-8211fe70dd55",
-      "item": {
-        "id": 30,
-        "manufacturer": "Purina",
-        "productName": "Naturals Plus Vitamins & Minerals",
-        "petType": "cat",
-        "productType": "Food",
-        "image": "/assets/5881546331_9a2dec70b0_w.jpg"
-      },
-      "quantity": 3
+      "quantity": 2
     }
   ]
 }
