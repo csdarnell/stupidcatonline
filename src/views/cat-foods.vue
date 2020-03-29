@@ -13,6 +13,7 @@
                                 <div class="card-content">
                                     <div class="content">
                                         <div :key="food.name" class="name">
+                                          <img class="card-image" v-bind:src="food.image" v-bind:alt="food.productName">
                                             {{ food.manufacturer}} {{ food.productName}}
                                         </div>
                                     </div>
@@ -21,7 +22,7 @@
                                     <router-link
                                         tag="button"
                                         class="link card-footer-item"
-                                        :to="{ name: 'cat-food-detail', params: {id: food.id } }"
+                                        :to="{ name: 'cat-foods', params: {id: food.id } }"
                                     >
                                         <i class="fas fa-check"></i>
                                         <span>Select</span>
