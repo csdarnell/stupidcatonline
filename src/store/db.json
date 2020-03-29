@@ -6,7 +6,7 @@
             "productName": "Overweight Management",
             "petType": "cat",
             "productType": "Food",
-            "image": "./assets/7179299204_a335d494d3_z.jpg"
+            "image": "/assets/7179299204_a335d494d3_z.jpg"
         },
         {
             "id": 20,
@@ -14,7 +14,7 @@
             "productName": "Proactive Health",
             "petType": "cat",
             "productType": "Food",
-            "image": "./assets/9521337301_bfdba2610c.jpg"
+            "image": "/assets/9521337301_bfdba2610c.jpg"
         },
         {
             "id": 30,
@@ -22,7 +22,7 @@
             "productName": "Naturals Plus Vitamins & Minerals",
             "petType": "cat",
             "productType": "Food",
-            "image": "./assets/5881546331_9a2dec70b0_w.jpg"
+            "image": "/assets/5881546331_9a2dec70b0_w.jpg"
         }
     ],
     "catLitter": [
@@ -32,7 +32,7 @@
             "productName": "Triple Action",
             "petType": "cat",
             "productType": "Litter",
-            "image": "./assets/15271329516_fcb2a1fb15_b.jpg"
+            "image": "/assets/15271329516_fcb2a1fb15_b.jpg"
         },
         {
             "id": 50,
@@ -40,7 +40,7 @@
             "productName": "24/7 Performance",
             "petType": "cat",
             "productType": "Litter",
-            "image": "./assets/images (2).jpg"
+            "image": "/assets/images (2).jpg"
         }
     ],
     "catTowers": [
@@ -50,7 +50,7 @@
             "productName": "Tower of Babylon Cat Tower",
             "petType": "cat",
             "productType": "Tower",
-            "image": "./assets/116507888_baae2c22bc_b.jpg"
+            "image": "/assets/116507888_baae2c22bc_b.jpg"
         },
         {
             "id": 70,
@@ -58,7 +58,7 @@
             "productName": "Leaning Tower",
             "petType": "cat",
             "productType": "Tower",
-            "image": "./assets/2242879150_6de769e7f8_b.jpg"
+            "image": "/assets/2242879150_6de769e7f8_b.jpg"
         },
         {
             "id": 80,
@@ -66,7 +66,7 @@
             "productName": "Cat Mesas",
             "petType": "cat",
             "productType": "Tower",
-            "image": "./assets/cat-3953989_960_720.png"
+            "image": "/assets/cat-3953989_960_720.png"
         }
     ],
     "catToys": [
@@ -76,7 +76,7 @@
             "productName": "Ring of Zing",
             "petType": "cat",
             "productType": "Toy",
-            "image": "./assets/505365736_e2fedfee2e_b.jpg"
+            "image": "/assets/505365736_e2fedfee2e_b.jpg"
         },
         {
             "id": 100,
@@ -84,7 +84,7 @@
             "productName": "Fake Mouse",
             "petType": "cat",
             "productType": "Toy",
-            "image": "./assets/129115633_d0971365b6_b.jpg"
+            "image": "/assets/129115633_d0971365b6_b.jpg"
         },
         {
             "id": 110,
@@ -92,7 +92,10 @@
             "productName": "Chaser Balls",
             "petType": "cat",
             "productType": "Toy",
-            "image": "./assets/unnamed (2).jpg"
+            "image": "/assets/unnamed (2).jpg"
         }
+    ],
+    "shoppingCart": [
+        
     ]
 }

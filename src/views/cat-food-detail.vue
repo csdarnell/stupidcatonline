@@ -9,19 +9,15 @@
         <div class="card-content">
           <div class="content">
             <div class="field">
-              <label class="label" for="id">id</label>
-              <label class="input" name="id" readonly>{{ catFood.id }}</label>
-            </div>
-            <div class="field">
               <label class="label" for="manufacturer">Manufacturer</label>
-              <input class="input" name="manufacturer" v-model="catFood.manufacturer" />
+              <input class="input" name="manufacturer" v-model="catFood.manufacturer" readonly="true" />
             </div>
             <div class="field">
               <label class="label" for="productName">Product Name</label>
-              <input class="input" name="productName" v-model="catFood.productName" />
+              <input class="input" name="productName" v-model="catFood.productName"  readonly="true" />
             </div>
-            <div class="field">
-              <img class="card-image" v-bind:src="catFood.image" v-bind:alt="catFood.productName">
+            <div>
+                <img class="image" v-bind:src="catFood.image" v-bind:alt="catFood.productName">
             </div>
           </div>
         </div>
