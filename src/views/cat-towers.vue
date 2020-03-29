@@ -24,7 +24,7 @@
                                         :to="{ name: 'cat-tower-detail', params: {id: tower.id } }"
                                     >
                                         <i class="fas fa-check"></i>
-                                        <span>Select</span>
+                                        <span>View Details</span>
                                     </router-link>
                                 </footer>
                             </div>

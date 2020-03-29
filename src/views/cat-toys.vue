@@ -24,7 +24,7 @@
                                         :to="{ name: 'cat-toy-detail', params: {id: toy.id } }"
                                     >
                                         <i class="fas fa-check"></i>
-                                        <span>Select</span>
+                                        <span>View Details</span>
                                     </router-link>
                                 </footer>
                             </div>
