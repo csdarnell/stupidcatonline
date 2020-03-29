@@ -97,7 +97,7 @@
   ],
   "shoppingCart": [
     {
-      "id": "",
+      "id": "8f57c516-d801-4130-fa36-54c3d48e05b2",
       "item": {
         "id": 10,
         "manufacturer": "Purina",
@@ -109,19 +109,7 @@
       "quantity": 3
     },
     {
-      "id": "7f0c26e6-5869-483e-627c-a725558ed699",
-      "item": {
-        "id": 10,
-        "manufacturer": "Purina",
-        "productName": "Overweight Management",
-        "petType": "cat",
-        "productType": "Food",
-        "image": "/assets/7179299204_a335d494d3_z.jpg"
-      },
-      "quantity": 3
-    },
-    {
-      "id": "2c27b337-f2dc-40f7-35ed-73a2273fd1ad",
+      "id": "590d1951-5529-4222-eba5-87b371e13712",
       "item": {
         "id": 20,
         "manufacturer": "IAMS",
@@ -131,6 +119,18 @@
         "image": "/assets/9521337301_bfdba2610c.jpg"
       },
       "quantity": 1
+    },
+    {
+      "id": "e5ff6984-63b7-4939-c176-8211fe70dd55",
+      "item": {
+        "id": 30,
+        "manufacturer": "Purina",
+        "productName": "Naturals Plus Vitamins & Minerals",
+        "petType": "cat",
+        "productType": "Food",
+        "image": "/assets/5881546331_9a2dec70b0_w.jpg"
+      },
+      "quantity": 3
     }
   ]
 }
