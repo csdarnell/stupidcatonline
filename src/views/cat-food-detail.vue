@@ -60,27 +60,12 @@ export default {
     };
   },
   created() {
-      console.log('cat-food-detail.created(): ');
-      console.log(this.isAddMode);
-    if (this.isAddMode) {
-      this.catFood = {
-        id: undefined,
-        manufacturer: '',
-        productName: '',
-        petType: 'cat',
-        productType: 'Food',
-        image: '',
-      };
-    } else {
-      console.log(this.id);
-      this.hero = { ...this.getCatFoodById(this.id) };
-    }
+    console.log('cat-food-detail.created(): ');
+    console.log(this.id);
+    this.catFood = { ...this.getCatFoodById(this.id) };
   },
   computed: {
     ...mapGetters(['getCatFoodById']),
-    isAddMode() {
-      return !this.id;
-    },
   },
   methods: {
     ...mapActions(['addToCart']),
