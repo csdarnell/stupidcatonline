@@ -13,6 +13,7 @@
                                 <div class="card-content">
                                     <div class="content">
                                         <div :key="litter.name" class="name">
+                                          <img class="card-image" v-bind:src="litter.image" v-bind:alt="litter.productName">
                                             {{ litter.manufacturer}} {{ litter.productName}}
                                         </div>
                                     </div>
@@ -34,53 +35,25 @@
                 <div class="notification is-info" v-show="message">{{ message }}</div>
             </div>
         </div>
-        <Modal
-            :message="modalMessage"
-            :isOpen="showModal"
-            @handleNo="closeModal"
-            @handleYes="deleteCatLitter"
-        >
-        </Modal>
     </div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import Modal from '@/components/modal';
 
 export default {
     name: 'CatLittersView',
     data() {
         return {
-            catLitterToDelete: null,
             message: '',
-            showModal: false
         };
-    },
-    components: {
-        Modal
     },
     async created() {
         console.log('created():  starting');
         await this.loadCatLitters();
     },
     methods: {
-        ...mapActions(['getCatLittersAction', 'deleteCatLitterAction']),
-        askToDelete(catLitter) {
-            this.catLitterToDelete = catLitter;
-            this.showModal = true;
-        },
-        closeModal() {
-            console.log('closeModal():  starting');
-            this.showModal = false;
-        },
-        async deleteCatLitter() {
-            this.closeModal();
-            if (this.catLitterToDelete) {
-                await this.deleteCatLitter(this.catLitterToDelete);
-            }
-            await this.loadCatLitters();
-        },
+        ...mapActions(['getCatLittersAction']),
         async loadCatLitters() {
             console.log('loadCatLitters():  starting');
             this.message = 'getting the cat Litters, please be patient';
@@ -90,11 +63,6 @@ export default {
     },
     computed: {
         ...mapState(['catLitters']),
-        modalMessage() {
-            console.log('modalMessage():  starting');
-            const name = 'No Name Provided';
-            return `Would you like to delete ${name} ?`;
-        },
     },
 };
 </script>

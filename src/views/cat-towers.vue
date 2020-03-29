@@ -13,6 +13,7 @@
                                 <div class="card-content">
                                     <div class="content">
                                         <div :key="tower.name" class="name">
+                                          <img class="card-image" v-bind:src="tower.image" v-bind:alt="tower.productName">
                                             {{ tower.manufacturer}} {{ tower.productName}}
                                         </div>
                                     </div>
@@ -34,53 +35,25 @@
                 <div class="notification is-info" v-show="message">{{ message }}</div>
             </div>
         </div>
-        <Modal
-            :message="modalMessage"
-            :isOpen="showModal"
-            @handleNo="closeModal"
-            @handleYes="deleteCatTower"
-        >
-        </Modal>
     </div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import Modal from '@/components/modal';
 
 export default {
     name: 'CatTowersView',
     data() {
         return {
-            catTowerToDelete: null,
             message: '',
-            showModal: false
         };
-    },
-    components: {
-        Modal
     },
     async created() {
         console.log('created():  starting');
         await this.loadCatTowers();
     },
     methods: {
-        ...mapActions(['getCatTowersAction', 'deleteCatTowerAction']),
-        askToDelete(catTower) {
-            this.catTowerToDelete = catTower;
-            this.showModal = true;
-        },
-        closeModal() {
-            console.log('closeModal():  starting');
-            this.showModal = false;
-        },
-        async deleteCatTower() {
-            this.closeModal();
-            if (this.catTowerToDelete) {
-                await this.deleteCatTower(this.catTowerToDelete);
-            }
-            await this.loadCatTowers();
-        },
+        ...mapActions(['getCatTowersAction']),
         async loadCatTowers() {
             console.log('loadCatTowers():  starting');
             this.message = 'getting the cat Towers, please be patient';
@@ -90,11 +63,6 @@ export default {
     },
     computed: {
         ...mapState(['catTowers']),
-        modalMessage() {
-            console.log('modalMessage():  starting');
-            const name = 'No Name Provided';
-            return `Would you like to delete ${name} ?`;
-        },
     },
 };
 </script>

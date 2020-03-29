@@ -35,53 +35,25 @@
                 <div class="notification is-info" v-show="message">{{ message }}</div>
             </div>
         </div>
-        <Modal
-            :message="modalMessage"
-            :isOpen="showModal"
-            @handleNo="closeModal"
-            @handleYes="deleteCatFood"
-        >
-        </Modal>
     </div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import Modal from '@/components/modal';
 
 export default {
     name: 'CatFoodsView',
     data() {
         return {
-            catFoodToDelete: null,
             message: '',
-            showModal: false
         };
-    },
-    components: {
-        Modal
     },
     async created() {
         console.log('created():  starting');
         await this.loadCatFoods();
     },
     methods: {
-        ...mapActions(['getCatFoodsAction', 'deleteCatFoodAction']),
-        askToDelete(catFood) {
-            this.catFoodToDelete = catFood;
-            this.showModal = true;
-        },
-        closeModal() {
-            console.log('closeModal():  starting');
-            this.showModal = false;
-        },
-        async deleteCatFood() {
-            this.closeModal();
-            if (this.catFoodToDelete) {
-                await this.deleteCatFood(this.catFoodToDelete);
-            }
-            await this.loadCatFoods();
-        },
+        ...mapActions(['getCatFoodsAction']),
         async loadCatFoods() {
             console.log('loadCatFoods():  starting');
             this.message = 'getting the cat foods, please be patient';
@@ -91,11 +63,6 @@ export default {
     },
     computed: {
         ...mapState(['catFoods']),
-        modalMessage() {
-            console.log('modalMessage():  starting');
-            const name = 'No Name Provided';
-            return `Would you like to delete ${name} ?`;
-        },
     },
 };
 </script>
