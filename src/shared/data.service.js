@@ -85,6 +85,30 @@ const getCatLitters = async function() {
     }
 }
 
+const addShoppingCartItem = async function () {
+    console.log('addShoppingCartItem');
+    // If product doesn't exist in the Shopping Cart, add it
+    // If it does exist in Shopping Cart, increase quantity
+    return null;
+}
+
+const updateShoppingCartItem = async function() {
+    console.log('updateShoppingCartItem');
+    // will probably just be updating quantity
+    return null;
+}
+
+const deleteShoppingCartItem = async function() {
+    // try {
+        console.log('deleteShoppingCartItem');
+        // will remove the entire product from shopping cart
+    return null;
+    // } catch (error) {
+    //     console.error(error);
+    //     return null;
+    // }
+}
+
 const parseList = response => {
     if (response.status !== 200) throw Error(response.message);
     if (!response.data) return [];
@@ -101,4 +125,7 @@ const parseList = response => {
       getCatTowers,
       getCatToys,
       getCatLitters,
+      addShoppingCartItem,
+      updateShoppingCartItem,
+      deleteShoppingCartItem
   };

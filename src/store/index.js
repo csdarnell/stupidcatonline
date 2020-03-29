@@ -7,6 +7,9 @@ import {
     GET_CATTOWERS,
     GET_CATTOYS,
     GET_CATLITTERS,
+    ADD_SHOPPINGCARTITEM,
+    UPDATE_SHOPPINGCARTITEM,
+    DELETE_SHOPPINGCARTITEM,
 } from './mutation-types';
 
 Vue.use(Vuex)
@@ -16,6 +19,7 @@ const state = () => ({
     catTowers: [],
     catToys: [],
     catLitters: [],
+    shoppingCartItems: [],
 })
 
 const mutations = {
@@ -31,6 +35,17 @@ const mutations = {
     [GET_CATLITTERS](state, catLitters) {
         state.catLitters = catLitters;
     },
+    [ADD_SHOPPINGCARTITEM](state, shoppingCartItem) {
+        state.shoppingCartItems.unshift(shoppingCartItem);
+    },
+    [UPDATE_SHOPPINGCARTITEM](state, shoppingCartItem) {
+        const index = state.shoppingCartItems.findIndex(h => h.id === shoppingCartItem.id);
+        state.shoppingCartItems.splice(index, 1, shoppingCartItem);
+        state.shoppingCartItems == [...state.shoppingCartItems];
+    },
+    [DELETE_SHOPPINGCARTITEM](state, shoppingCartItemId) {
+        state.shoppingCartItems = [...state.shoppingCartItems.filter(p => p.id !== shoppingCartItemId)];
+    }
 };
 
 const actions = {
@@ -50,6 +65,18 @@ const actions = {
         const catLitters = await dataService.getCatLitters();
         commit(GET_CATLITTERS, catLitters);
     },
+    async addShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
+        const addedShoppingCartItem = await dataService.addShoppingCartItem(); //shoppingCartItem);
+        commit(ADD_SHOPPINGCARTITEM, addedShoppingCartItem);
+    },
+    async updateShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
+        const addedShoppingCartItem = await dataService.updateShoppingCartItem(); //shoppingCartItem);
+        commit(ADD_SHOPPINGCARTITEM, addedShoppingCartItem);
+    },
+    async deleteShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
+        const deletedShoppingCartItem = await dataService.deleteShoppingCartItem(); //shoppingCartItem);
+        commit(DELETE_SHOPPINGCARTITEM, deletedShoppingCartItem);
+    }
 
 };
 

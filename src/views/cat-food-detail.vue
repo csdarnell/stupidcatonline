@@ -64,12 +64,13 @@ export default {
     ...mapGetters(['getCatFoodById']),
   },
   methods: {
-    ...mapActions(['addToCart']),
+    ...mapActions(['addShoppingCartItemAction']),
     returnToList() {
       this.$router.push({ name: 'cat-foods' });
     },
     async addToCart() {
-        await this.addToCart(this.CatFood);
+        await this.addShoppingCartItemAction(this.CatFood);
+        this.$router.push({ name: 'cat-foods' });
     },
   },
 };
