@@ -145,6 +145,32 @@
         "image": "/assets/505365736_e2fedfee2e_b.jpg"
       },
       "quantity": 1
+    },
+    {
+      "id": "6e3db953-5551-4247-f156-269e4053818b",
+      "item": {
+        "id": 60,
+        "manufacturer": "Tower",
+        "productName": "Tower of Babylon Cat Tower",
+        "pricePerUnit": 129.99,
+        "petType": "cat",
+        "productType": "Tower",
+        "image": "/assets/116507888_baae2c22bc_b.jpg"
+      },
+      "quantity": 1
+    },
+    {
+      "id": "f7dca141-a32d-4ae8-0038-9e5105a0dbca",
+      "item": {
+        "id": 50,
+        "manufacturer": "Tidy Cats",
+        "productName": "24/7 Performance",
+        "pricePerUnit": 17.99,
+        "petType": "cat",
+        "productType": "Litter",
+        "image": "/assets/images (2).jpg"
+      },
+      "quantity": 1
     }
   ]
 }

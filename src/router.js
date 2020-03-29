@@ -40,6 +40,13 @@ export default new Router({
             import(/* webpackChunkName: "bundle-catTowers" */ './views/cat-towers.vue'),
         },
         {
+            path: '/cat-towers/:id',
+            name: 'cat-tower-detail',
+            props: parseProps,
+            component: () =>
+            import(/* webpackChunkName: "bundle-catTowers" */ './views/cat-tower-detail.vue'),
+        },
+        {
             path: '/cat-toys',
             name: 'cat-toys',
             component: () =>
@@ -56,7 +63,14 @@ export default new Router({
             path: '/cat-litters',
             name: 'cat-litters',
             component: () =>
-            import(/* webpackChunkName: "bundle-catlitters" */ './views/cat-litters.vue'),
+            import(/* webpackChunkName: "bundle-catLitters" */ './views/cat-litters.vue'),
+        },
+        {
+            path: '/cat-litters/:id',
+            name: 'cat-litter-detail',
+            props: parseProps,
+            component: () =>
+            import(/* webpackChunkName: "bundle-catLitters" */ './views/cat-litter-detail.vue'),
         },
         {
             path: '/shopping-cart',
