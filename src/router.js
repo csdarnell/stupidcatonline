@@ -31,7 +31,7 @@ export default new Router({
             name: 'cat-food-detail',
             props: parseProps,
             component: () =>
-            import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-food-detail.vue')
+            import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-food-detail.vue'),
         },
         {
             path: '/cat-towers',
@@ -44,6 +44,13 @@ export default new Router({
             name: 'cat-toys',
             component: () =>
             import(/* webpackChunkName: "bundle-catToys" */ './views/cat-toys.vue'),
+        },
+        {
+            path: '/cat-toys/:id',
+            name: 'cat-toy-detail',
+            props: parseProps,
+            component: () =>
+            import(/* webpackChunkName: "bundle-catToys" */ './views/cat-toy-detail.vue'),
         },
         {
             path: '/cat-litters',

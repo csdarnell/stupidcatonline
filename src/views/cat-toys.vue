@@ -12,6 +12,8 @@
                                         <div :key="toy.name" class="name">
                                           <img class="card-image" v-bind:src="toy.image" v-bind:alt="toy.productName">
                                             {{ toy.manufacturer}} {{ toy.productName}}
+                                            <br/>
+                                            Price(each): ${{ toy.pricePerUnit }}
                                         </div>
                                     </div>
                                 </div>
