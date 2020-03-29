@@ -4,6 +4,8 @@ import PageNotFound from '@/views/page-not-found';
 
 Vue.use(Router);
 
+const parseProps = r => ({ id: parseInt(r.params.id) });
+
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -25,8 +27,9 @@ export default new Router({
             import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-foods.vue'),
         },
         {
-            path: '/cat-food/:id',
+            path: '/cat-foods/:id',
             name: 'cat-food-detail',
+            props: parseProps,
             component: () =>
             import(/* webpackChunkName: "bundle-catFoods" */ './views/cat-food-detail.vue')
         },
