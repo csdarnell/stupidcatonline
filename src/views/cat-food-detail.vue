@@ -42,6 +42,17 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
+function S4() {
+    // http://guid.us/GUID/JavaScript
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1); 
+}
+
+function newGuid() {
+    // http://guid.us/GUID/JavaScript
+    return (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+}
+
+
 export default {
   name: 'CatFoodDetailView',
   props: {
@@ -61,15 +72,37 @@ export default {
     this.catFood = { ...this.getCatFoodById(this.id) };
   },
   computed: {
-    ...mapGetters(['getCatFoodById']),
+    ...mapGetters(['getCatFoodById', 'getShoppingCartItemById', 'getShoppingCartItemByItemId']),
   },
   methods: {
-    ...mapActions(['addShoppingCartItemAction']),
+    ...mapActions(['addShoppingCartItemAction', 'updateShoppingCartItemAction']),
     returnToList() {
       this.$router.push({ name: 'cat-foods' });
     },
     async addToCart() {
-        await this.addShoppingCartItemAction(this.CatFood);
+
+        var existingShoppingCartItem;
+        try {
+            existingShoppingCartItem = this.getShoppingCartItemByItemId(this.id);
+        } catch (error) {
+            console.log('An exception occured while getting a shopping cart item by internal item id:');
+            console.log(error);
+        }
+
+        if (existingShoppingCartItem)
+        {
+            existingShoppingCartItem.quantity += 1;
+            await this.updateShoppingCartItemAction(existingShoppingCartItem);
+        }
+        else {
+            const newShoppingCartItem = {
+                id: newGuid(),
+                item: this.catFood,
+                quantity: 1,
+            }
+            await this.addShoppingCartItemAction(newShoppingCartItem);
+        }
+
         this.$router.push({ name: 'cat-foods' });
     },
   },

@@ -7,6 +7,7 @@ import {
     GET_CATTOWERS,
     GET_CATTOYS,
     GET_CATLITTERS,
+    GET_SHOPPINGCARTITEMS,
     ADD_SHOPPINGCARTITEM,
     UPDATE_SHOPPINGCARTITEM,
     DELETE_SHOPPINGCARTITEM,
@@ -34,6 +35,9 @@ const mutations = {
     },
     [GET_CATLITTERS](state, catLitters) {
         state.catLitters = catLitters;
+    },
+    [GET_SHOPPINGCARTITEMS](state, shoppingCartItems) {
+        state.shoppingCartItems = shoppingCartItems;
     },
     [ADD_SHOPPINGCARTITEM](state, shoppingCartItem) {
         state.shoppingCartItems.unshift(shoppingCartItem);
@@ -65,16 +69,20 @@ const actions = {
         const catLitters = await dataService.getCatLitters();
         commit(GET_CATLITTERS, catLitters);
     },
-    async addShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
-        const addedShoppingCartItem = await dataService.addShoppingCartItem(); //shoppingCartItem);
+    async getShoppingCartItemsAction({ commit }) {
+        const shoppingCartItems = await dataService.getShoppingCartItems();
+        commit(GET_SHOPPINGCARTITEMS, shoppingCartItems);
+    },
+    async addShoppingCartItemAction({ commit }, shoppingCartItem) {
+        const addedShoppingCartItem = await dataService.addShoppingCartItem(shoppingCartItem);
         commit(ADD_SHOPPINGCARTITEM, addedShoppingCartItem);
     },
-    async updateShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
-        const addedShoppingCartItem = await dataService.updateShoppingCartItem(); //shoppingCartItem);
+    async updateShoppingCartItemAction({ commit }, shoppingCartItem) {
+        const addedShoppingCartItem = await dataService.updateShoppingCartItem(shoppingCartItem);
         commit(ADD_SHOPPINGCARTITEM, addedShoppingCartItem);
     },
-    async deleteShoppingCartItemAction({ commit }) { //, shoppingCartItem) {
-        const deletedShoppingCartItem = await dataService.deleteShoppingCartItem(); //shoppingCartItem);
+    async deleteShoppingCartItemAction({ commit }, shoppingCartItem) {
+        const deletedShoppingCartItem = await dataService.deleteShoppingCartItem(shoppingCartItem);
         commit(DELETE_SHOPPINGCARTITEM, deletedShoppingCartItem);
     }
 
@@ -85,6 +93,8 @@ const getters = {
     getCatTowerById: state => id => state.catTowers.find(h => h.id === id),
     getCatToyById: state => id => state.catToys.find(h => h.id === id),
     getCatLitterById: state => id => state.catLitters.find(h => h.id === id),
+    getShoppingCartItemById: state => id => state.shoppingCartItems.find(h => h.id === id),
+    getShoppingCartItemByItemId: state => id => state.shoppingCartItems.find(h => h.item.id === id),
 };
 
 

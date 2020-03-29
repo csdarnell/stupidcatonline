@@ -85,28 +85,65 @@ const getCatLitters = async function() {
     }
 }
 
-const addShoppingCartItem = async function () {
-    console.log('addShoppingCartItem');
+const getShoppingCartItems = async function() {
+    try {
+        console.log('data.service.getShoppingCartItems():  Atempting to get Shopping Cart Items!!!!');
+        console.log(API);
+        const response = await axios.get(`${API}/shoppingCart`);
+
+        let data = parseList(response);
+
+        const shoppingCartItems = data.map(h => {
+            return h;
+        });
+
+        return shoppingCartItems;
+
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
+
+const addShoppingCartItem = async function (shoppingCartItem) {
     // If product doesn't exist in the Shopping Cart, add it
     // If it does exist in Shopping Cart, increase quantity
-    return null;
+
+    try {
+        console.log('addShoppingCartItem');
+        const response = await axios.post(`${API}/shoppingCart`, shoppingCartItem);
+        const addedShoppingCartItem = parseItem(response, 201);
+        return addedShoppingCartItem;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
-const updateShoppingCartItem = async function() {
-    console.log('updateShoppingCartItem');
+const updateShoppingCartItem = async function(shoppingCartItem) {
     // will probably just be updating quantity
-    return null;
+    try {
+        console.log('updateShoppingCartItem');
+        const response = await axios.put(`${API}/shoppingCart/${shoppingCartItem.id}`, shoppingCartItem);
+        const updatedShoppingCartItem = parseItem(response, 200);
+        return updatedShoppingCartItem;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
-const deleteShoppingCartItem = async function() {
-    // try {
+const deleteShoppingCartItem = async function(shoppingCartItem) {
+     try {
         console.log('deleteShoppingCartItem');
         // will remove the entire product from shopping cart
-    return null;
-    // } catch (error) {
-    //     console.error(error);
-    //     return null;
-    // }
+        const response = await axios.delete(`${API}/shoppingCart/${shoppingCartItem.id}`);
+        parseItem(response, 200);
+        return shoppingCartItem.id;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
 const parseList = response => {
@@ -119,12 +156,21 @@ const parseList = response => {
     return list;
   };
   
+  export const parseItem = (response, code) => {
+    if (response.status !== code) throw Error(response.message);
+    let item = response.data;
+    if (typeof item !== 'object') {
+      item = undefined;
+    }
+    return item;
+  };
   
   export const dataService = {
       getCatFoods,
       getCatTowers,
       getCatToys,
       getCatLitters,
+      getShoppingCartItems,
       addShoppingCartItem,
       updateShoppingCartItem,
       deleteShoppingCartItem
