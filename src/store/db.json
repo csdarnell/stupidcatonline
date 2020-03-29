@@ -97,19 +97,7 @@
   ],
   "shoppingCart": [
     {
-      "id": "e3d45742-f8fa-4089-275f-e3009efa2879",
-      "item": {
-        "id": 10,
-        "manufacturer": "Purina",
-        "productName": "Overweight Management",
-        "petType": "cat",
-        "productType": "Food",
-        "image": "/assets/7179299204_a335d494d3_z.jpg"
-      },
-      "quantity": 1
-    },
-    {
-      "id": "2e7a3d34-dfd8-4182-7629-a74bbd2d2cc2",
+      "id": "187eed19-da5a-446e-a9ab-766e9099e4a2",
       "item": {
         "id": 20,
         "manufacturer": "IAMS",
@@ -118,7 +106,7 @@
         "productType": "Food",
         "image": "/assets/9521337301_bfdba2610c.jpg"
       },
-      "quantity": 2
+      "quantity": 4
     }
   ]
 }

@@ -106,9 +106,6 @@ const getShoppingCartItems = async function() {
 }
 
 const addShoppingCartItem = async function (shoppingCartItem) {
-    // If product doesn't exist in the Shopping Cart, add it
-    // If it does exist in Shopping Cart, increase quantity
-
     try {
         console.log('addShoppingCartItem');
         const response = await axios.post(`${API}/shoppingCart`, shoppingCartItem);
@@ -121,7 +118,6 @@ const addShoppingCartItem = async function (shoppingCartItem) {
 }
 
 const updateShoppingCartItem = async function(shoppingCartItem) {
-    // will probably just be updating quantity
     try {
         console.log('updateShoppingCartItem');
         const response = await axios.put(`${API}/shoppingCart/${shoppingCartItem.id}`, shoppingCartItem);
@@ -136,7 +132,6 @@ const updateShoppingCartItem = async function(shoppingCartItem) {
 const deleteShoppingCartItem = async function(shoppingCartItem) {
      try {
         console.log('deleteShoppingCartItem');
-        // will remove the entire product from shopping cart
         const response = await axios.delete(`${API}/shoppingCart/${shoppingCartItem.id}`);
         parseItem(response, 200);
         return shoppingCartItem.id;
