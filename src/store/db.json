@@ -108,7 +108,20 @@
   ],
   "shoppingCart": [
     {
-      "id": "9e6647ad-37a1-4cc9-d1c2-33f03fae87cb",
+      "id": "eeaaffa4-034f-4e75-b49b-de32089e416c",
+      "item": {
+        "id": 20,
+        "manufacturer": "IAMS",
+        "productName": "Proactive Health",
+        "pricePerUnit": 24.99,
+        "petType": "cat",
+        "productType": "Food",
+        "image": "/assets/9521337301_bfdba2610c.jpg"
+      },
+      "quantity": 5
+    },
+    {
+      "id": "043535fb-764c-41bc-e65d-601e3cc1c7c9",
       "item": {
         "id": 10,
         "manufacturer": "Purina",
@@ -118,7 +131,7 @@
         "productType": "Food",
         "image": "/assets/7179299204_a335d494d3_z.jpg"
       },
-      "quantity": 3
+      "quantity": 4
     }
   ]
 }

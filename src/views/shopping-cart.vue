@@ -127,12 +127,20 @@ export default {
             this.message = 'getting the shopping cart items, please be patient';
             await this.getShoppingCartItemsAction();
             this.message = '';
-            this.shoppingCartTotalItems = this.shoppingCartItems.reduce((a,b) => (a.quantity + b.quantity), 0);
-            this.shoppingCartTotalCost = this.shoppingCartItems.reduce((a,b) => (a.quantity * a.item.pricePerUnit) + (b.quantity * b.item.pricePerUnit), 0);
+            await this.updateShoppingCartTotals();
+        },
+        async updateShoppingCartTotals() {
+            console.log('updateShoppingCartTotals()');
+            this.shoppingCartTotalItems = 0;
+            this.shoppingCartTotalCost = 0;
+            for (var i = 0, len = this.shoppingCartItems.length; i < len; i++) {
+                this.shoppingCartTotalItems = this.shoppingCartTotalItems + this.shoppingCartItems[i].quantity;
+                this.shoppingCartTotalCost = this.shoppingCartTotalCost + (this.shoppingCartItems[i].quantity * this.shoppingCartItems[i].item.pricePerUnit);
+            }
         }
     },
     computed: {
-        ...mapState(['shoppingCartItems', 'shoppingCartTotalItems','shoppingCartTotalCost']),
+        ...mapState(['shoppingCartItems']),
         modalMessage() {
             const name =
                 this.shoppingCartItemToDelete && this.shoppingCartItemToDelete.item
