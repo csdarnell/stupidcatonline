@@ -17,6 +17,8 @@
                                             {{ cartItem.item.manufacturer}} {{ cartItem.item.productName}}
                                             <br/>
                                             Quantity: {{ cartItem.quantity }}
+                                            Price(each): ${{ cartItem.item.pricePerUnit }}
+                                            Total Cost: ${{ cartItem.item.pricePerUnit * cartItem.quantity }}
                                         </div>
                                     </div>
                                 </div>

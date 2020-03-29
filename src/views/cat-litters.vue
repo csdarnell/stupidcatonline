@@ -4,9 +4,6 @@
             <div class="column is-8">
                 <div class="section content-title-group">
                     <h2 class="title">Cat Litters</h2>
-                    <button class="button refresh-button" @click="LoadCatLitters()">
-                        <i class="fas fa-sync"></i>Refresh
-                    </button>
                     <ul>
                         <li v-for="litter in catLitters" :key="litter.id">
                             <div class="card">

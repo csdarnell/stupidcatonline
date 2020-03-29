@@ -4,6 +4,7 @@
       "id": 10,
       "manufacturer": "Purina",
       "productName": "Overweight Management",
+      "pricePerUnit": 2.99,
       "petType": "cat",
       "productType": "Food",
       "image": "/assets/7179299204_a335d494d3_z.jpg"
@@ -12,6 +13,7 @@
       "id": 20,
       "manufacturer": "IAMS",
       "productName": "Proactive Health",
+      "pricePerUnit": 24.99,
       "petType": "cat",
       "productType": "Food",
       "image": "/assets/9521337301_bfdba2610c.jpg"
@@ -20,6 +22,7 @@
       "id": 30,
       "manufacturer": "Purina",
       "productName": "Naturals Plus Vitamins & Minerals",
+      "pricePerUnit": 14.99,
       "petType": "cat",
       "productType": "Food",
       "image": "/assets/5881546331_9a2dec70b0_w.jpg"
@@ -30,6 +33,7 @@
       "id": 40,
       "manufacturer": "Fresh Step",
       "productName": "Triple Action",
+      "pricePerUnit": 17.99,
       "petType": "cat",
       "productType": "Litter",
       "image": "/assets/15271329516_fcb2a1fb15_b.jpg"
@@ -38,6 +42,7 @@
       "id": 50,
       "manufacturer": "Tidy Cats",
       "productName": "24/7 Performance",
+      "pricePerUnit": 17.99,
       "petType": "cat",
       "productType": "Litter",
       "image": "/assets/images (2).jpg"
@@ -48,6 +53,7 @@
       "id": 60,
       "manufacturer": "Tower",
       "productName": "Tower of Babylon Cat Tower",
+      "pricePerUnit": 129.99,
       "petType": "cat",
       "productType": "Tower",
       "image": "/assets/116507888_baae2c22bc_b.jpg"
@@ -56,6 +62,7 @@
       "id": 70,
       "manufacturer": "Tower",
       "productName": "Leaning Tower",
+      "pricePerUnit": 74.99,
       "petType": "cat",
       "productType": "Tower",
       "image": "/assets/2242879150_6de769e7f8_b.jpg"
@@ -64,6 +71,7 @@
       "id": 80,
       "manufacturer": "Tower",
       "productName": "Cat Mesas",
+      "pricePerUnit": 59.99,
       "petType": "cat",
       "productType": "Tower",
       "image": "/assets/cat-3953989_960_720.png"
@@ -74,6 +82,7 @@
       "id": 90,
       "manufacturer": "Hartz",
       "productName": "Ring of Zing",
+      "pricePerUnit": 23.99,
       "petType": "cat",
       "productType": "Toy",
       "image": "/assets/505365736_e2fedfee2e_b.jpg"
@@ -82,6 +91,7 @@
       "id": 100,
       "manufacturer": "Hartz",
       "productName": "Fake Mouse",
+      "pricePerUnit": 1.99,
       "petType": "cat",
       "productType": "Toy",
       "image": "/assets/129115633_d0971365b6_b.jpg"
@@ -90,6 +100,7 @@
       "id": 110,
       "manufacturer": "Hartz",
       "productName": "Chaser Balls",
+      "pricePerUnit": 4.99,
       "petType": "cat",
       "productType": "Toy",
       "image": "/assets/unnamed (2).jpg"
@@ -97,14 +108,15 @@
   ],
   "shoppingCart": [
     {
-      "id": "187eed19-da5a-446e-a9ab-766e9099e4a2",
+      "id": "9e6647ad-37a1-4cc9-d1c2-33f03fae87cb",
       "item": {
-        "id": 20,
-        "manufacturer": "IAMS",
-        "productName": "Proactive Health",
+        "id": 10,
+        "manufacturer": "Purina",
+        "productName": "Overweight Management",
+        "pricePerUnit": 2.99,
         "petType": "cat",
         "productType": "Food",
-        "image": "/assets/9521337301_bfdba2610c.jpg"
+        "image": "/assets/7179299204_a335d494d3_z.jpg"
       },
       "quantity": 4
     }

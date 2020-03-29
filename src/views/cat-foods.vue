@@ -4,9 +4,6 @@
             <div class="column is-8">
                 <div class="section content-title-group">
                     <h2 class="title">Cat Food</h2>
-                    <button class="button refresh-button" @click="LoadCatFoods()">
-                        <i class="fas fa-sync"></i>Refresh
-                    </button>
                     <ul>
                         <li v-for="food in catFoods" :key="food.id">
                             <div class="card">
@@ -15,6 +12,8 @@
                                         <div :key="food.name" class="name">
                                           <img class="card-image" v-bind:src="food.image" v-bind:alt="food.productName">
                                             {{ food.manufacturer}} {{ food.productName}}
+                                            <br/>
+                                            Price(each): ${{ food.pricePerUnit }}
                                         </div>
                                     </div>
                                 </div>
