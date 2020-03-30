@@ -12,7 +12,7 @@
                                 :to="{ name: 'shopping-cart-order' }"
                             >
                                 <i class="fas fa-check"></i>
-                                <span>Proceed To Order Details</span>
+                                <span>Proceed To Shipping Details</span>
                             </router-link>
                         </div>
                     </div>

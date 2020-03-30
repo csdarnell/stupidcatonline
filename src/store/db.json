@@ -115,5 +115,19 @@
     "customerAddressZipCode": "",
     "customerPhoneNumber": ""
   },
-  "shoppingCart": []
+  "shoppingCart": [
+    {
+      "id": "6b46dd94-a90a-48aa-e159-4fa8d226b560",
+      "item": {
+        "id": 10,
+        "manufacturer": "Purina",
+        "productName": "Overweight Management",
+        "pricePerUnit": 2.99,
+        "petType": "cat",
+        "productType": "Food",
+        "image": "/assets/7179299204_a335d494d3_z.jpg"
+      },
+      "quantity": 3
+    }
+  ]
 }
