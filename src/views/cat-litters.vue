@@ -8,12 +8,20 @@
                         <li v-for="litter in catLitters" :key="litter.id">
                             <div class="card">
                                 <div class="card-content">
-                                    <div class="content">
-                                        <div :key="litter.name" class="name">
-                                          <img class="card-image" v-bind:src="litter.image" v-bind:alt="litter.productName">
-                                            {{ litter.manufacturer}} {{ litter.productName}}
+                                    <router-link
+                                        tag="button"
+                                        class="link card-footer-item"
+                                        :to="{ name: 'cat-litter-detail', params: {id: litter.id } }"
+                                    >
+                                        <div class="content">
+                                            <div :key="litter.name" class="name">
+                                            <img class="card-image" v-bind:src="litter.image" v-bind:alt="litter.productName">
+                                                {{ litter.manufacturer}} 
+                                                <br/>
+                                                {{ litter.productName}}
+                                            </div>
                                         </div>
-                                    </div>
+                                    </router-link>
                                 </div>
                                 <footer>
                                     <router-link

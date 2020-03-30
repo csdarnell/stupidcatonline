@@ -9,12 +9,20 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="content">
-                                        <div :key="toy.name" class="name">
-                                          <img class="card-image" v-bind:src="toy.image" v-bind:alt="toy.productName">
-                                            {{ toy.manufacturer}} {{ toy.productName}}
-                                            <br/>
-                                            Price(each): ${{ toy.pricePerUnit }}
-                                        </div>
+                                        <router-link
+                                            tag="button"
+                                            class="link card-footer-item"
+                                            :to="{ name: 'cat-toy-detail', params: {id: toy.id } }"
+                                        >
+                                            <div :key="toy.name" class="name">
+                                            <img class="card-image" v-bind:src="toy.image" v-bind:alt="toy.productName">
+                                                {{ toy.manufacturer}} 
+                                                <br/>
+                                                {{ toy.productName}}
+                                                <br/>
+                                                Price(each): ${{ toy.pricePerUnit }}
+                                            </div>
+                                        </router-link>
                                     </div>
                                 </div>
                                 <footer>

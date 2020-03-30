@@ -51,7 +51,7 @@
   "catTowers": [
     {
       "id": 60,
-      "manufacturer": "Tower",
+      "manufacturer": "Power Tower",
       "productName": "Tower of Babylon Cat Tower",
       "pricePerUnit": 129.99,
       "petType": "cat",
@@ -60,7 +60,7 @@
     },
     {
       "id": 70,
-      "manufacturer": "Tower",
+      "manufacturer": "Power Tower",
       "productName": "Leaning Tower",
       "pricePerUnit": 74.99,
       "petType": "cat",
@@ -69,7 +69,7 @@
     },
     {
       "id": 80,
-      "manufacturer": "Tower",
+      "manufacturer": "Power Tower",
       "productName": "Cat Mesas",
       "pricePerUnit": 59.99,
       "petType": "cat",

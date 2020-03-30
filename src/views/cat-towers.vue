@@ -8,12 +8,22 @@
                         <li v-for="tower in catTowers" :key="tower.id">
                             <div class="card">
                                 <div class="card-content">
-                                    <div class="content">
-                                        <div :key="tower.name" class="name">
-                                          <img class="card-image" v-bind:src="tower.image" v-bind:alt="tower.productName">
-                                            {{ tower.manufacturer}} {{ tower.productName}}
+                                    <router-link
+                                        tag="button"
+                                        class="link card-footer-item"
+                                        :to="{ name: 'cat-tower-detail', params: {id: tower.id } }"
+                                    >
+                                        <div class="content">
+                                            <div :key="tower.name" class="name">
+                                            <img class="card-image" v-bind:src="tower.image" v-bind:alt="tower.productName">
+                                                {{ tower.manufacturer}} 
+                                                <br/>
+                                                {{ tower.productName}}
+                                                <br/>
+                                                Price(each): ${{ tower.pricePerUnit }}
+                                            </div>
                                         </div>
-                                    </div>
+                                    </router-link>
                                 </div>
                                 <footer>
                                     <router-link

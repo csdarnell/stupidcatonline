@@ -5,6 +5,17 @@
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">{{ catFood.fullName }}</p>
+          <button
+            class="button card-header-item cancel-button"
+            @click="returnToList()"
+          >
+            <i class="fas fa-undo"></i>
+            <span>Return to List</span>
+          </button>
+          <button class="button card-header-item" @click="addToCart()">
+            <i class="fas fa-save"></i>
+            <span>Add To Shopping Cart</span>
+          </button>
         </header>
         <div class="card-content">
           <div class="content">
@@ -28,7 +39,7 @@
             @click="returnToList()"
           >
             <i class="fas fa-undo"></i>
-            <span>Return</span>
+            <span>Return to List</span>
           </button>
           <button class="link card-footer-item" @click="addToCart()">
             <i class="fas fa-save"></i>
