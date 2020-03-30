@@ -79,6 +79,18 @@ export default new Router({
             import(/* webpackChunkName: "bundle-shoppingCart" */ './views/shopping-cart.vue'),
         },
         {
+            path: '/shopping-cart-order',
+            name: 'shopping-cart-order',
+            component: () =>
+            import(/* webpackChunkName: "bundle-shoppingCart" */ './views/shopping-cart-order.vue'),
+        },
+        {
+            path: '/shopping-cart-confirmation',
+            name: 'shopping-cart-confirmation',
+            component: () =>
+            import(/* webpackChunkName: "bundle-shoppingCart" */ './views/shopping-cart-confirmation.vue'),
+        },
+        {
             path: '/about',
             name: 'about',
             component: () =>

@@ -106,9 +106,18 @@
       "image": "/assets/unnamed (2).jpg"
     }
   ],
+  "shippingDetails": {
+    "customerNameFirst": "",
+    "customerNameLast": "",
+    "customerAddressStreet": "",
+    "customerAddressCity": "",
+    "customerAddressState": "",
+    "customerAddressZipCode": "",
+    "customerPhoneNumber": ""
+  },
   "shoppingCart": [
     {
-      "id": "eeaaffa4-034f-4e75-b49b-de32089e416c",
+      "id": "3713e24b-aa59-4631-3323-0e2583b1e80b",
       "item": {
         "id": 20,
         "manufacturer": "IAMS",
@@ -118,36 +127,10 @@
         "productType": "Food",
         "image": "/assets/9521337301_bfdba2610c.jpg"
       },
-      "quantity": 5
+      "quantity": 2
     },
     {
-      "id": "043535fb-764c-41bc-e65d-601e3cc1c7c9",
-      "item": {
-        "id": 10,
-        "manufacturer": "Purina",
-        "productName": "Overweight Management",
-        "pricePerUnit": 2.99,
-        "petType": "cat",
-        "productType": "Food",
-        "image": "/assets/7179299204_a335d494d3_z.jpg"
-      },
-      "quantity": 4
-    },
-    {
-      "id": "f1710086-cdbb-4cfd-6594-7cbd3d05f198",
-      "item": {
-        "id": 90,
-        "manufacturer": "Hartz",
-        "productName": "Ring of Zing",
-        "pricePerUnit": 23.99,
-        "petType": "cat",
-        "productType": "Toy",
-        "image": "/assets/505365736_e2fedfee2e_b.jpg"
-      },
-      "quantity": 1
-    },
-    {
-      "id": "6e3db953-5551-4247-f156-269e4053818b",
+      "id": "b51aa4b7-f157-4cb1-25d9-bd3fe30d0702",
       "item": {
         "id": 60,
         "manufacturer": "Tower",
@@ -156,19 +139,6 @@
         "petType": "cat",
         "productType": "Tower",
         "image": "/assets/116507888_baae2c22bc_b.jpg"
-      },
-      "quantity": 1
-    },
-    {
-      "id": "f7dca141-a32d-4ae8-0038-9e5105a0dbca",
-      "item": {
-        "id": 50,
-        "manufacturer": "Tidy Cats",
-        "productName": "24/7 Performance",
-        "pricePerUnit": 17.99,
-        "petType": "cat",
-        "productType": "Litter",
-        "image": "/assets/images (2).jpg"
       },
       "quantity": 1
     }

@@ -6,6 +6,18 @@
                     <h2 class="title">Shopping Cart</h2>
                     <div class="card">
                         <div class="card-content">
+                            <router-link
+                                tag="button"
+                                class="bold"
+                                :to="{ name: 'shopping-cart-order' }"
+                            >
+                                <i class="fas fa-check"></i>
+                                <span>Proceed To Order Details</span>
+                            </router-link>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
                             Shopping Cart items: {{ this.shoppingCartTotalItems }}
                             <br/>
                             Shopping Cart Cost: {{ this.shoppingCartTotalCost }}

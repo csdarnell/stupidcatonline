@@ -6,3 +6,5 @@ export const GET_SHOPPINGCARTITEMS = 'getShoppingCartItems';
 export const ADD_SHOPPINGCARTITEM = 'addShoppingCartItem';
 export const UPDATE_SHOPPINGCARTITEM = 'updateShoppingCartItem';
 export const DELETE_SHOPPINGCARTITEM = 'deleteShoppingCartItem';
+// export const GET_SHIPPINGDETAILS = 'getShippingDetails';
+// export const UPDATE_SHIPPINGDETAILS = 'updateShippingDetails';

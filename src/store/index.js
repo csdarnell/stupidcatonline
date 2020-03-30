@@ -11,6 +11,8 @@ import {
     ADD_SHOPPINGCARTITEM,
     UPDATE_SHOPPINGCARTITEM,
     DELETE_SHOPPINGCARTITEM,
+    // GET_SHIPPINGDETAILS,
+    // UPDATE_SHIPPINGDETAILS,
 } from './mutation-types';
 
 Vue.use(Vuex)
@@ -20,6 +22,7 @@ const state = () => ({
     catTowers: [],
     catToys: [],
     catLitters: [],
+    shippingDetails: {},
     shoppingCartItems: [],
 })
 
@@ -36,6 +39,9 @@ const mutations = {
     [GET_CATLITTERS](state, catLitters) {
         state.catLitters = catLitters;
     },
+    // [GET_SHIPPINGDETAILS](state, shippingDetails) {
+    //     state.shippingDetails = shippingDetails;
+    // },
     [GET_SHOPPINGCARTITEMS](state, shoppingCartItems) {
         state.shoppingCartItems = shoppingCartItems;
     },
@@ -49,7 +55,11 @@ const mutations = {
     },
     [DELETE_SHOPPINGCARTITEM](state, shoppingCartItemId) {
         state.shoppingCartItems = [...state.shoppingCartItems.filter(p => p.id !== shoppingCartItemId)];
-    }
+    },
+    // [UPDATE_SHIPPINGDETAILS](state, shippingDetails) {
+    //     state.shippingDetails = shippingDetails;
+    //     state.shippingDetails == shippingDetails;
+    // }
 };
 
 const actions = {
