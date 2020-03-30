@@ -141,6 +141,23 @@ const deleteShoppingCartItem = async function(shoppingCartItem) {
     }
 }
 
+const emptyShoppingCart = async function() {
+    try {
+        console.log('emptyShoppingCart()');
+
+        const shoppingCartItems = await this.getShoppingCartItems();
+        if (shoppingCartItems) {
+            for (var i = 0, len = shoppingCartItems.length; i < len; i++) {
+                this.deleteShoppingCartItem(shoppingCartItems[i]);
+            }
+        }
+        return;
+    } catch (error) {
+        console.error(error);
+        return;
+    }
+}
+
 const parseList = response => {
     if (response.status !== 200) throw Error(response.message);
     if (!response.data) return [];
@@ -168,5 +185,6 @@ const parseList = response => {
       getShoppingCartItems,
       addShoppingCartItem,
       updateShoppingCartItem,
-      deleteShoppingCartItem
+      deleteShoppingCartItem,
+      emptyShoppingCart
   };

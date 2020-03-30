@@ -115,32 +115,5 @@
     "customerAddressZipCode": "",
     "customerPhoneNumber": ""
   },
-  "shoppingCart": [
-    {
-      "id": "3713e24b-aa59-4631-3323-0e2583b1e80b",
-      "item": {
-        "id": 20,
-        "manufacturer": "IAMS",
-        "productName": "Proactive Health",
-        "pricePerUnit": 24.99,
-        "petType": "cat",
-        "productType": "Food",
-        "image": "/assets/9521337301_bfdba2610c.jpg"
-      },
-      "quantity": 2
-    },
-    {
-      "id": "b51aa4b7-f157-4cb1-25d9-bd3fe30d0702",
-      "item": {
-        "id": 60,
-        "manufacturer": "Tower",
-        "productName": "Tower of Babylon Cat Tower",
-        "pricePerUnit": 129.99,
-        "petType": "cat",
-        "productType": "Tower",
-        "image": "/assets/116507888_baae2c22bc_b.jpg"
-      },
-      "quantity": 1
-    }
-  ]
+  "shoppingCart": []
 }

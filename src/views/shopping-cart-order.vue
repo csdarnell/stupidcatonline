@@ -98,8 +98,10 @@ export default {
         await this.loadShoppingCartItems();
     },
     methods: {
-        ...mapActions(['getShoppingCartItemsAction']),
-        cancelOrder() {
+        ...mapActions(['getShoppingCartItemsAction', 'emptyShoppingCartAction']),
+        async cancelOrder() {
+            await this.emptyShoppingCartAction();
+                
             this.$router.push({ name: 'home' });
         },
         async shipOrder() {
@@ -109,6 +111,8 @@ export default {
                 (this.shippingDetails.customerAddressCity) &&
                 (this.shippingDetails.customerAddressState) &&
                 (this.shippingDetails.customerAddressZipCode)) {
+
+                await this.emptyShoppingCartAction();
 
                 this.$router.push({ name: 'shopping-cart-confirmation' });
 

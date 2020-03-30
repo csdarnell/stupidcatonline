@@ -11,6 +11,7 @@ import {
     ADD_SHOPPINGCARTITEM,
     UPDATE_SHOPPINGCARTITEM,
     DELETE_SHOPPINGCARTITEM,
+    // EMPTY_SHOPPINGCART,
     // GET_SHIPPINGDETAILS,
     // UPDATE_SHIPPINGDETAILS,
 } from './mutation-types';
@@ -60,6 +61,9 @@ const mutations = {
     //     state.shippingDetails = shippingDetails;
     //     state.shippingDetails == shippingDetails;
     // }
+    // [EMPTY_SHOPPINGCART](state) {
+    //     state.shoppingCartItems = [];
+    // }
 };
 
 const actions = {
@@ -94,6 +98,16 @@ const actions = {
     async deleteShoppingCartItemAction({ commit }, shoppingCartItem) {
         const deletedShoppingCartItem = await dataService.deleteShoppingCartItem(shoppingCartItem);
         commit(DELETE_SHOPPINGCARTITEM, deletedShoppingCartItem);
+    },
+    async emptyShoppingCartAction() {
+        console.log('emptyShoppingCartAction()');
+
+        const shoppingCartItems = await dataService.getShoppingCartItems();
+        if (shoppingCartItems) {
+            for (var i = 0, len = shoppingCartItems.length; i < len; i++) {
+                await dataService.deleteShoppingCartItem(shoppingCartItems[i]);
+            }
+        }
     }
 
 };
