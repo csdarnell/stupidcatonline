@@ -3,6 +3,7 @@ module.exports = {
       devtool: 'source-map',
     },
     devServer: {
+      disableHostCheck: true,
       proxy: {
         '/api/': {
           target: 'http://localhost:8899', // target host
